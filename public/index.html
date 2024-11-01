@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+  <style>
+    .form {
+      display: grid;
+      grid-template-columns: max-content auto;
+      row-gap: 1rem;
+      padding: 3rem;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: max-content auto;
+    }
+    #printable {
+      width: 1188px;
+      height: 810px;
+      background-color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1px
+    }
+
+    .component-list{
+      position: absolute;
+      font-size: 10px;
+      bottom: 21%;
+      right: 1.5%;
+    }
+    .card-body{
+      display: grid;
+      grid-template-rows: auto max-content;
+      font-size: 10px;
+      padding: 0 3%;
+      font-weight: bold;
+    }
+    .ritual {
+      font-size: 15px;
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border:1px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top: -5%;
+      left: -10%;
+    }
+    .compo {
+      font-size: 15px;
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border:1px solid black;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -5%;
+      right: -10%;
+    }
+    .card-header  {
+      position: relative;
+      width: 100%;
+    }
+    .line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      border-top: 1px solid black;
+      background-color: black;
+      transform: translateY(-50%);
+    }
+    .level{
+      position: absolute;
+      top: 50%;
+      left: 1.5%;
+      width: 55px;
+      height: 55px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      font-size: 60px;
+    }
+    .components{
+      position: absolute;
+      top: 50%;
+      right: 1.5%;
+      display: flex;
+      gap: 3px;
+      transform: translateY(-50%);
+    }
+
+    .component{
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 50%;
+      font-size: 10px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.5);
+      background-image: url('a.png');
+      background-size: 1400px;
+      background-position: -170px -401px;
+      background-repeat: no-repeat;
+      border: 3px solid black;
+      border-radius: 9px;
+      display: grid;
+      grid-template-rows: 15% auto 10%;
+    }
+    .component, .level, .one-string-block, .ritual, .compo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-weight: bold;
+    }
+    .card-title-top{
+      font-weight: bold;
+      width: max-content;
+      position: absolute;
+      top: calc(50% - 0.5em);
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    .card-title-bottom{
+      font-weight: bold;
+      width: max-content;
+      position: absolute;
+      bottom:  calc(-50% + 1.5em);
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+    .card-footer {
+      position: relative;
+      width: 100%;
+    }
+    .card-footer .components{
+      left: 1.5%;
+      top:25%;
+    }
+
+    .card-footer .line {
+      top:25%;
+    }
+    .one-string-block{
+      width: max-content;
+      height: 20px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 10px;
+      font-size: 10px;
+      padding: 0px 10px;
+    }
+
+    .active {
+      border:3px solid orange;
+    }
+
+    @media print {
+      * {
+        color: black !important;
+        -webkit-print-color-adjust: exact !important; /* Для точной печати */
+        print-color-adjust: exact !important;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 1em;
+      }
+      /* Скрываем весь контент по умолчанию */
+      .non-printable {
+        display: none !important;
+      }
+
+      .active {
+        border:3px solid black;
+      }
+    }
+  </style>
+</html>

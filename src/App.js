@@ -2,15 +2,19 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CardBuilder from "./pages/CardBuilder";
 import NoPage from "./pages/NoPage";
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<CardBuilder />} />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<CardBuilder />} />
+              <Route path="*" element={<NoPage />} />
+            </Routes>
+          </BrowserRouter>
+      </Provider>
   );
 }
 

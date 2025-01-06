@@ -1,0 +1,104 @@
+.card {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url('classIcon.png');
+    background-size: 1400px;
+    background-position: -170px -401px;
+    background-repeat: no-repeat;
+    border: 3px solid black;
+    border-radius: 9px;
+    display: grid;
+    grid-template-rows: 15% auto 10%;
+}
+
+
+.card-header  {
+    position: relative;
+    width: 100%;
+}
+
+.level{
+    position: absolute;
+    top: 50%;
+    left: 1.5%;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+}
+
+
+.card-title-top{
+    font-weight: bold;
+    width: max-content;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.card-title-bottom{
+    font-weight: bold;
+    width: max-content;
+    position: absolute;
+    bottom:  calc(-50% + 1.5em);
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+.card-footer {
+    position: relative;
+    width: 100%;
+}
+.card-footer .components{
+    left: 1.5%;
+    top:25%;
+}
+
+.card-footer .line {
+    top:25%;
+}
+
+.card-body{
+    display: grid;
+    grid-template-rows: auto max-content;
+    font-size: 10px;
+    padding: 0 3%;
+    font-weight: bold;
+}
+
+.component-list{
+    position: absolute;
+    font-size: 10px;
+    bottom: 21%;
+    right: 1.5%;
+}
+
+.ritual {
+    font-size: 15px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border:1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: -5%;
+    left: -10%;
+}
+
+.compo {
+    font-size: 15px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border:1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5%;
+    right: -10%;
+}
+
+.active {
+    border:3px solid orange;
+}

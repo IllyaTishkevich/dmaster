@@ -1,3 +1,5 @@
+import './card.css';
+
 const Card = ({card, style, setActive}) => {
     return (
         <div className={"card " + style} onClick={setActive}>

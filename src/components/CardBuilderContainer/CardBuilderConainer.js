@@ -6,7 +6,7 @@ import PrintButton from "../PrintButton";
 import testData from '../../testData'
 const CardBuilderContainer = () => {
     const [ cards, setCards ] = useState(testData);
-    const [ activeIndex, setActive ] = useState(0);
+    const [ activeIndex, setActive ] = useState(null);
 
     const updateHandler = (name, value) => {
         const copy = [...cards];
@@ -22,7 +22,10 @@ const CardBuilderContainer = () => {
                 <CardList cards={cards} setActive={setActive} active={activeIndex}/>
             </div>
             <div className='non-printable'>
-                <CardForm data={cards[activeIndex]} updateHandler={updateHandler}/>
+                <CardForm data={activeIndex !== null ? cards[activeIndex] : null}
+                          updateHandler={updateHandler}
+                          setActive={setActive}
+                />
                 <PrintButton />
             </div>
         </div>

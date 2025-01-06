@@ -1,9 +1,3 @@
-.form {
-  display: grid;
-  grid-template-columns: max-content auto;
-  row-gap: 1rem;
-  padding: 3rem;
-}
 .container {
   display: grid;
   grid-template-columns: max-content auto;

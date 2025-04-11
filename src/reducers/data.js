@@ -1,8 +1,11 @@
+import testData from '../testData'
+
 const initialState = {
     data: [],
     loading: false,
     error: null,
     searchResult: null,
+    currentList: testData,
 };
 
 export const dataReducer = (state = initialState, action) => {
@@ -22,6 +25,9 @@ export const dataReducer = (state = initialState, action) => {
 
         case 'GET_ALL_DATA':
             return { ...state, searchResult: state.data };
+
+        case 'UPDATE_CURRENT_LIST':
+            return { ...state, currentList: action.payload };
 
         default:
             return state;

@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCurrentList } from '../../actions/cards';
 
 import CardList from "../CardList";
 import CardForm from "../CardForm";
 import PrintButton from "../PrintButton";
-import testData from '../../testData'
+
 const CardBuilderContainer = () => {
-    const [ cards, setCards ] = useState(testData);
+    const dispatch = useDispatch();
+    const currentList = useSelector(state => state.dataState.currentList);
+    const [ cards, setCards ] = useState(currentList);
     const [ activeIndex, setActive ] = useState(null);
+
+    useEffect(() => {
+        dispatch(updateCurrentList(cards));
+    }, [cards, dispatch]);
 
     const updateHandler = (name, value) => {
         const copy = [...cards];
@@ -16,6 +24,7 @@ const CardBuilderContainer = () => {
 
         setCards(copy);
     }
+
     return (
         <div className='container'>
             <div id='printable' >

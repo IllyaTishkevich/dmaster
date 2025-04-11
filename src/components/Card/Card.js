@@ -15,14 +15,14 @@ const Card = ({card, style, setActive}) => {
                     { card.S ? <div className="component">C</div> : null }
                     { card.M ? <div className="component">M</div> : null }
                 </div>
-                <div className="card-title-top">{ card.nameUp }</div>
-                <div className="card-title-bottom">{ card.nameDown }</div>
+                <div className="card-title-top" style={{fontSize: card.nameSize + 'px'}}>{ card.nameUp }</div>
+                <div className="card-title-bottom" style={{fontSize: card.nameSize + 'px'}}>{ card.nameDown }</div>
             </div>
             <div className="card-body">
-                <div className="body-text">
+                <div className="body-text" style={{fontSize: card.textSize + 'px'}}>
                     { card.text }
                 </div>
-                <div className="up-body">
+                <div className="up-body" style={{fontSize: card.textDownSize + 'px'}}>
                     { card.textDown }
                 </div>
             </div>
@@ -32,7 +32,7 @@ const Card = ({card, style, setActive}) => {
                     { card.leadTime !== '' ? <div className="one-string-block">{ card.leadTime }</div> : null }
                     { card.duration !== '' ? <div className="one-string-block">{ card.duration }</div> : null }
                 </div>
-                <div className="component-list">
+                <div className="component-list" style={{fontSize: card.componentsSize + 'px'}}>
                     <span>{ card.components }</span>
                 </div>
             </div>

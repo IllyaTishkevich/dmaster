@@ -1,0 +1,6 @@
+.import-form {
+    grid-area: import-form;
+    display: grid;
+    grid-template-columns: auto;
+    align-content: baseline;
+}
